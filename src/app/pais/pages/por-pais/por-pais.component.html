@@ -3,7 +3,7 @@
 
 <div class="row">
   <div class="col">
-    <form autocomplete="off" (ngSubmit)="Buscar()" >
+    <form autocomplete="off" (ngSubmit)="Buscar()">
       <input
         type="text"
         name="termino"
@@ -17,10 +17,12 @@
 
 <hr />
 
-<div class="alert alert-danger">No hay busquedas con el termino ...</div>
+<div *ngIf="hayError" class="alert alert-danger">
+  No hay busquedas con el termino: {{ termino }}
+</div>
 
 <!-- TODO: Refactor this to component -->
-<div class="row">
+<div *ngIf="!hayError" class="row">
   <div class="col">
     <table class="table table-hover">
       <thead>
