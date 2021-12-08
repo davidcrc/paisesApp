@@ -48,3 +48,9 @@ ng g c pais/pages/porPais --skip-tests -is
 ng g c pais/pages/porRegion --skip-tests -is
 ng g c pais/pages/verPais --skip-tests -is
 ```
+
+## Service to get pais
+
+```sh
+ng g s pais/services/pais --skip-tests
+```
