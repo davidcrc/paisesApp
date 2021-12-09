@@ -54,3 +54,7 @@ ng g c pais/pages/verPais --skip-tests -is
 ```sh
 ng g s pais/services/pais --skip-tests
 ```
+
+## Get interfaces from json
+
+[QuickType](https://app.quicktype.io/ "json or anything to get anything").

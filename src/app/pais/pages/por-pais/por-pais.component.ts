@@ -19,8 +19,8 @@ export class PorPaisComponent implements OnInit {
     console.log('buscate', this.termino);
 
     this.paisService.buscarPais(this.termino).subscribe(
-      (data) => {
-        console.log('data', data);
+      (paises) => {
+        console.log('paises', paises);
       },
       (err) => {
         console.log('err', err);
