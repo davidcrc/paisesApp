@@ -58,3 +58,10 @@ ng g s pais/services/pais --skip-tests
 ## Get interfaces from json
 
 [QuickType](https://app.quicktype.io/ "json or anything to get anything").
+
+## Component reusables
+
+```sh
+ng g c pais/components/paisTabla --skip-tests -is
+ng g c pais/components/paisInput --skip-tests -is
+```
