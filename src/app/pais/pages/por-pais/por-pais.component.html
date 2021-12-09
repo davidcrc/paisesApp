@@ -4,7 +4,10 @@
 <div class="row">
   <div class="col">
     <!-- REVIEW: Aqui llama al onEnter definido en el input y atrapa la emision -->
-    <app-pais-input (onEnter)="Buscar($event)"></app-pais-input>
+    <app-pais-input
+      (onEnter)="Buscar($event)"
+      (onDebounce)="sugerencias($event)"
+    ></app-pais-input>
   </div>
 </div>
 
