@@ -20,4 +20,9 @@ export class PaisService {
     const url = `${this.apiUrl}/capital/${termino}`;
     return this.http.get<Country[]>(url);
   }
+
+  obtenerPais(termino: string) {
+    const url = `${this.apiUrl}/alpha/${termino}`;
+    return this.http.get<Country[]>(url);
+  }
 }
