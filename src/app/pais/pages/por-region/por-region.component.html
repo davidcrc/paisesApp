@@ -23,3 +23,15 @@
     </button>
   </div>
 </div>
+
+<hr>
+
+<div *ngIf="hayError" class="alert alert-danger">
+  No hay busquedas con la region: {{ regionActiva }}
+</div>
+
+<div *ngIf="paises.length > 0" class="row">
+  <div class="col">
+    <app-pais-tabla [paises]="paises"></app-pais-tabla>
+  </div>
+</div>
