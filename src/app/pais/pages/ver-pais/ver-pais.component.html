@@ -9,12 +9,12 @@
         Pais: <small>{{ pais.name.common }}</small>
       </h1>
     </div>
-    <div class="col-4">
+    <div class="col-4 border">
       <h3>Bandera</h3>
       <img [src]="pais.flags.png" alt="" class="small-flag" />
     </div>
 
-    <div class="col">
+    <div class="col border">
       <h3>Informacion</h3>
       <table class="table table-hover">
         <tbody>
@@ -29,13 +29,13 @@
           <tr>
             <td><strong>Ubicacion</strong></td>
             <td>
-              <a [href]="pais.maps.googleMaps">Maps</a>
+              <a target="_blank" [href]="pais.maps.googleMaps">Maps link</a>
             </td>
           </tr>
           <tr>
             <td><strong>Currencies</strong></td>
-            <td>
-              {{ pais.currencies | json }}
+            <td *ngFor="let item of pais.currencies | keyvalue">
+              {{ item.key }}: {{ item.value.name }}
             </td>
           </tr>
           <tr>
@@ -53,6 +53,19 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <h3>Traducciones</h3>
+    <div class="row">
+      <div class="col">
+        <span
+          class="badge bg-primary mr-1"
+          *ngFor="let item of pais.translations | keyvalue"
+          [title]="item.key"
+        >
+          {{ item.value.official }}
+        </span>
+      </div>
     </div>
   </div>
 </ng-template>
