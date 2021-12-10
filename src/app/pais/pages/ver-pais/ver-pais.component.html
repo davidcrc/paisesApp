@@ -3,7 +3,10 @@
 </div>
 
 <ng-template #divPais>
-  <div class="row" *ngFor="let pais of paises; let i = index">
+  <div
+    class="row animate__animated animate__fadeIn animate__faster"
+    *ngFor="let pais of paises; let i = index"
+  >
     <div class="col-12">
       <h1>
         Pais: <small>{{ pais.name.common }}</small>

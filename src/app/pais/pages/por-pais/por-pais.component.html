@@ -1,19 +1,20 @@
-<h2>Por pais</h2>
-<hr />
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h2>Por pais</h2>
+  <hr />
 
-<div class="row">
-  <div class="col">
-    <!-- REVIEW: Aqui llama al onEnter definido en el input y atrapa la emision -->
-    <app-pais-input
-      (onEnter)="Buscar($event)"
-      (onDebounce)="sugerencias($event)"
-      placeholder="Buscar por pais"
-    ></app-pais-input>
+  <div class="row">
+    <div class="col">
+      <!-- REVIEW: Aqui llama al onEnter definido en el input y atrapa la emision -->
+      <app-pais-input
+        (onEnter)="Buscar($event)"
+        (onDebounce)="sugerencias($event)"
+        placeholder="Buscar por pais"
+      ></app-pais-input>
+    </div>
   </div>
+
+  <hr />
 </div>
-
-<hr />
-
 <div *ngIf="hayError" class="alert alert-danger">
   No hay busquedas con el termino: {{ termino }}
 </div>
