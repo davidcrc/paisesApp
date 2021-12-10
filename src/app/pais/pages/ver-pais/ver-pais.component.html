@@ -1,1 +1,58 @@
-<p>ver-pais works!</p>
+<div *ngIf="!paises.length; else divPais" class="alert alert-info">
+  Cargando...
+</div>
+
+<ng-template #divPais>
+  <div class="row" *ngFor="let pais of paises; let i = index">
+    <div class="col-12">
+      <h1>
+        Pais: <small>{{ pais.name.common }}</small>
+      </h1>
+    </div>
+    <div class="col-4">
+      <h3>Bandera</h3>
+      <img [src]="pais.flags.png" alt="" class="small-flag" />
+    </div>
+
+    <div class="col">
+      <h3>Informacion</h3>
+      <table class="table table-hover">
+        <tbody>
+          <tr>
+            <td><strong>Problacion</strong></td>
+            <td>{{ pais.population | number }}</td>
+          </tr>
+          <tr>
+            <td><strong>Capital</strong></td>
+            <td>{{ pais.capital }}</td>
+          </tr>
+          <tr>
+            <td><strong>Ubicacion</strong></td>
+            <td>
+              <a [href]="pais.maps.googleMaps">Maps</a>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Currencies</strong></td>
+            <td>
+              {{ pais.currencies | json }}
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Borders</strong></td>
+            <td>
+              <ul class="list-group">
+                <li
+                  *ngFor="let borders of pais.borders; let i = index"
+                  class="list-group-item"
+                >
+                  {{ borders }}
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</ng-template>
